@@ -1,0 +1,15 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  # 注册自定义字段配置器
+  Tourze\EasyAdminEnumFieldBundle\Field\Configurator\EnumFieldConfigurator: ~
+
+  # 新增服务层
+  Tourze\EasyAdminEnumFieldBundle\Service\EnumFieldFactoryInterface:
+    alias: Tourze\EasyAdminEnumFieldBundle\Service\EnumFieldFactory
+
+  Tourze\EasyAdminEnumFieldBundle\Service\EnumFieldFactory:
+    public: true  # 允许跨模块调用

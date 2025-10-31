@@ -1,0 +1,2 @@
+rules:
+    - Tourze\EasyAdminEnumFieldBundle\PHPStan\Rules\EnumFieldCasesImplementsBadgeInterfaceRule

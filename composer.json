@@ -1,0 +1,39 @@
+{
+  "name": "tourze/easy-admin-enum-field-bundle",
+  "description": "A Symfony bundle that provides enhanced enum field support for EasyAdmin with automatic badge rendering and advanced display options",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "require": {
+    "easycorp/easyadmin-bundle": "^4",
+    "symfony/config": "^7.3",
+    "symfony/dependency-injection": "^7.3",
+    "symfony/form": "^7.3",
+    "symfony/framework-bundle": "^7.3",
+    "symfony/http-kernel": "^7.3",
+    "symfony/twig-bundle": "^7.3",
+    "symfony/yaml": "^7.3",
+    "tourze/bundle-dependency": "1.*",
+    "tourze/enum-extra": "0.1.*",
+    "tourze/symfony-dependency-service-loader": "0.0.*"
+  },
+  "require-dev": {
+    "doctrine/orm": "^3.0",
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^11.5",
+    "symfony/phpunit-bridge": "^7.3",
+    "tourze/phpunit-base": "1.*",
+    "tourze/phpunit-symfony-kernel-test": "0.0.*",
+    "tourze/phpunit-symfony-unit-test": "0.0.*",
+    "tourze/symfony-testing-framework": "0.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tourze\\EasyAdminEnumFieldBundle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tourze\\EasyAdminEnumFieldBundle\\Tests\\": "tests"
+    }
+  }
+}

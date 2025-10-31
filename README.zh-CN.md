@@ -1,4 +1,4 @@
-# EasyAdmin Enum Field Bundle
+# EasyAdmin 枚举字段扩展包
 
 [English](README.md) | [中文](README.zh-CN.md)
 
@@ -8,36 +8,36 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/tourze/php-monorepo/ci.yml)](https://github.com/tourze/php-monorepo/actions)
 [![Code Coverage](https://img.shields.io/codecov/c/github/tourze/php-monorepo)](https://codecov.io/gh/tourze/php-monorepo)
 
-A Symfony bundle that provides enhanced enum field support for EasyAdmin, 
-with automatic badge rendering and advanced display options.
+一个 Symfony 扩展包，为 EasyAdmin 提供增强的枚举字段支持，
+具有自动徽章渲染和高级显示选项。
 
-## Features
+## 功能特性
 
-- Enhanced enum field rendering with automatic badge support
-- Seamless integration with PHP 8.1+ enums
-- Automatic label generation from enum cases
-- Customizable badge colors and styles
-- Support for translatable enum labels
-- Multiple choice selection capabilities
-- Autocomplete widget support
-- Native and expanded rendering modes
+- 增强的枚举字段渲染，支持自动徽章显示
+- 与 PHP 8.1+ 枚举无缝集成
+- 从枚举案例自动生成标签
+- 可自定义徽章颜色和样式
+- 支持可翻译的枚举标签
+- 多选功能支持
+- 自动完成小部件支持
+- 原生和展开渲染模式
 
-## Installation
+## 安装
 
 ```bash
 composer require tourze/easy-admin-enum-field-bundle
 ```
 
-## Dependencies
+## 依赖要求
 
-- PHP 8.1 or higher
-- Symfony 6.4 or higher
-- EasyAdmin Bundle 4.0 or higher
-- tourze/enum-extra package
+- PHP 8.1 或更高版本
+- Symfony 6.4 或更高版本
+- EasyAdmin Bundle 4.0 或更高版本
+- tourze/enum-extra 包
 
-## Quick Start
+## 快速开始
 
-### Basic Usage
+### 基本用法
 
 ```php
 <?php
@@ -45,7 +45,7 @@ composer require tourze/easy-admin-enum-field-bundle
 use Tourze\EasyAdminEnumFieldBundle\Field\EnumField;
 use App\Entity\StatusEnum;
 
-// In your EasyAdmin CrudController
+// 在您的 EasyAdmin CrudController 中
 public function configureFields(string $pageName): iterable
 {
     yield EnumField::new('status')
@@ -54,14 +54,14 @@ public function configureFields(string $pageName): iterable
 }
 ```
 
-### Advanced Configuration
+### 高级配置
 
 ```php
 <?php
 
 use Tourze\EasyAdminEnumFieldBundle\Field\EnumField;
 
-// Custom badge mapping
+// 自定义徽章映射
 yield EnumField::new('priority')
     ->setEnumCases(PriorityEnum::cases())
     ->renderAsBadges([
@@ -70,16 +70,16 @@ yield EnumField::new('priority')
         'low' => 'success'
     ]);
 
-// Multiple choice support
+// 多选支持
 yield EnumField::new('tags')
     ->setEnumCases(TagEnum::cases())
     ->allowMultipleChoices()
     ->autocomplete();
 ```
 
-### Enum Interface Support
+### 枚举接口支持
 
-Your enums can implement the `Labelable` and `BadgeInterface` interfaces for enhanced functionality:
+您的枚举可以实现 `Labelable` 和 `BadgeInterface` 接口以获得增强功能：
 
 ```php
 <?php
@@ -96,9 +96,9 @@ enum StatusEnum: string implements Labelable, BadgeInterface
     public function getLabel(): string
     {
         return match ($this) {
-            self::ACTIVE => 'Active',
-            self::INACTIVE => 'Inactive',
-            self::PENDING => 'Pending',
+            self::ACTIVE => '活跃',
+            self::INACTIVE => '非活跃',
+            self::PENDING => '待处理',
         };
     }
 
@@ -113,28 +113,28 @@ enum StatusEnum: string implements Labelable, BadgeInterface
 }
 ```
 
-## Configuration Options
+## 配置选项
 
-### Badge Types
+### 徽章类型
 
-Available badge types: `success`, `warning`, `danger`, `info`, `primary`, `secondary`, `light`, `dark`
+可用的徽章类型：`success`、`warning`、`danger`、`info`、`primary`、`secondary`、`light`、`dark`
 
-### Widget Types
+### 小部件类型
 
-- `native`: Use native HTML select widget
-- `autocomplete`: Use autocomplete widget with search functionality
+- `native`：使用原生 HTML 选择小部件
+- `autocomplete`：使用具有搜索功能的自动完成小部件
 
-### Display Options
+### 显示选项
 
-- `renderExpanded()`: Render as radio buttons or checkboxes
-- `escapeHtml()`: Control HTML escaping in field values
-- `allowMultipleChoices()`: Enable multiple selection
+- `renderExpanded()`：渲染为单选按钮或复选框
+- `escapeHtml()`：控制字段值中的 HTML 转义
+- `allowMultipleChoices()`：启用多选功能
 
-## Advanced Usage
+## 高级用法
 
-### Custom Field Configurator
+### 自定义字段配置器
 
-You can create custom field configurators to apply consistent enum field settings:
+您可以创建自定义字段配置器以应用一致的枚举字段设置：
 
 ```php
 <?php
@@ -157,9 +157,9 @@ class StatusFieldConfigurator
 }
 ```
 
-### Dynamic Badge Configuration
+### 动态徽章配置
 
-Use callable for dynamic badge assignment:
+使用可调用函数进行动态徽章分配：
 
 ```php
 yield EnumField::new('status')
@@ -174,10 +174,10 @@ yield EnumField::new('status')
     });
 ```
 
-## Contributing
+## 贡献
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+请查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详情。
 
-## License
+## 许可证
 
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+MIT 许可证 (MIT)。请查看 [License File](LICENSE) 了解更多信息。
