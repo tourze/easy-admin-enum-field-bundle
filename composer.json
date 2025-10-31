@@ -13,7 +13,7 @@
     "symfony/twig-bundle": "^7.3",
     "symfony/yaml": "^7.3",
     "tourze/bundle-dependency": "1.*",
-    "tourze/enum-extra": "0.1.*",
+    "tourze/enum-extra": "1.*",
     "tourze/symfony-dependency-service-loader": "1.*"
   },
   "require-dev": {
