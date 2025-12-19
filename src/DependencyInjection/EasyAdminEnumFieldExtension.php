@@ -6,7 +6,7 @@ namespace Tourze\EasyAdminEnumFieldBundle\DependencyInjection;
 
 use Tourze\SymfonyDependencyServiceLoader\AutoExtension;
 
-class EasyAdminEnumFieldExtension extends AutoExtension
+final class EasyAdminEnumFieldExtension extends AutoExtension
 {
     protected function getConfigDir(): string
     {
